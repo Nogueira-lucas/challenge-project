@@ -1,0 +1,14 @@
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 3%;
+
+    &-head {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &-table {
+        max-width: 800px;
+    }
+}

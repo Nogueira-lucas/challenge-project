@@ -1,0 +1,13 @@
+.container {
+    padding: 10px;
+    min-width: 200px;
+
+    &-options {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+h3 {
+    text-align: center;
+}

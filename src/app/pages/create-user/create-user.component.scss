@@ -1,0 +1,26 @@
+/* Estilo para o formulário */
+mat-card {
+    width: 300px;
+    margin: 20px auto;
+  }
+  
+  mat-card-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  button {
+    width: 100%;
+  }
+  
+  /* Estilo para centralizar o botão */
+  .mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

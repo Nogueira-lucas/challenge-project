@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="container-head">
+        <h1>Santander Challenge</h1>
+        <button mat-raised-button color="primary" routerLink="/create">Create</button>
+    </div>
+
+    <table mat-table [dataSource]="users" class="mat-elevation-z8 container-table">
+  
+        <ng-container matColumnDef="firstName">
+          <th mat-header-cell *matHeaderCellDef> First Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="lastName">
+          <th mat-header-cell *matHeaderCellDef> Last Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="options">
+            <th mat-header-cell *matHeaderCellDef> Options </th>
+            <td mat-cell *matCellDef="let element">
+                <button mat-button color="accent" routerLink="/view/{{element.id}}">View</button>
+                <button mat-button color="primary" routerLink="/update/{{element.id}}">Edit</button>
+                <button mat-button color="warn" (click)="openDeleteDialog(element.id)">Remove</button>
+            </td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator 
+    (page)="changePage($event)"
+    [hidePageSize]="true"
+    [disabled]="isLoading"
+    [showFirstLastButtons]="false"
+    [length]="length"
+    [pageIndex]="currPage"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageOptions">
+    </mat-paginator>       
+</div>
